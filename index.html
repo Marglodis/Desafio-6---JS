@@ -13,17 +13,19 @@
 
 <body>
     <div class="container">
+        
         <h1>Conversor de Monedas Nacional</h1>
+        <div class="fecha">Divisas hoy</div>
         <hr>
         <div class="conversor">
-            <div class="tiempo">Divisas hoy</div>
+            
             <h3>Pesos CLP</h3>
             <input type="text" id="pesos" placeholder="Ingrese el monto en CLP" onkeypress="return valideKey(event); ">
 
             <p>Moneda a convertir:</p>
             <select id="moneda">
-                <option value="USD">USD - Dólar</option>
-                <option value="EUR">EUR - Euro</option>
+                <option value="dolar" >USD - Dólar </option>
+                <option value="euro">EUR - Euro</option>
             </select>
 
             <button type="button" class="btn btn-primary" onclick="convertir()">Buscar</button>
@@ -33,7 +35,7 @@
         </div>
         <br>
         <h1>Histórico de Divisas</h1>
-<table class="table" id="lista-usuario"></table>
+
 <div class="grafica">
     <canvas id="myChart2"></canvas>
 </div>
