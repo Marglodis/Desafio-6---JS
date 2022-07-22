@@ -1,7 +1,5 @@
 const clp = document.getElementById("pesos");
 const urlAPI = "https://mindicador.cl/api";
-const dolar = "https://mindicador.cl/api/dolar";
-const euro = "https://mindicador.cl/api/euro";
 const resultado = document.getElementById("resultado");
 const tabla = document.getElementById("lista-usuario");
 const moneda = document.getElementById("moneda");
@@ -56,7 +54,7 @@ async function cargarDatos(moneda) {
 
     return { fechas, etiquetas };
   } catch (e) {
-    alert("Fallo en la obtención de datos. Intente nuevamente");
+    alert("Fallo en la obtención de datos para la gráfica. Intente nuevamente");
   }
 }
 
@@ -66,7 +64,7 @@ async function cargarDatos(moneda) {
 async function renderGrafica() {
   const tipoDeGrafica = "line";
   const colorBG = "#" + randomHex(6);
-  const colorDeLinea = "#" + randomHex(6);
+  const colorDeLinea = "#" + randomHex(6);     
 
   try {
   const datosRender= await cargarDatos(moneda);
@@ -115,6 +113,7 @@ clp.addEventListener("change",  ()=> {
 //GEnerar los colores de lineas aleatoriamente en cada busqueda
 randomHex = (length) => ("0".repeat(length) + Math.floor(Math.random() * 16 ** length).toString(16)).slice(-length);
 
+// Limpiar valores mostrados
 function limpiar()
 {
         clp.value = "";
